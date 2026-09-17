@@ -58,7 +58,10 @@ const perguntas = [
                     "Você possui uma visão estratégica que alia a otimização de custos à preservação ambiental, provando que sustentabilidade e lucro andam juntos."
                 ]
                 }    
-               
+               function aleatorio(lista) {
+const posicao = Math.floor(Math.random()* lista.length);
+return lista[posicao];
+}
             ]
         },
         {
@@ -107,10 +110,14 @@ function mostraAlternativas(){
 
 }
 function respostaSelecionada(opcaoSelecionada) {
-    const afirmacoes = opcaoSelecionada.afirmacao;
-    historiaFinal += afirmacoes + " ";
-    atual++
-    mostraPergunta();
+    const afirmacoes = aleatorio(opcaoSelecionada.afirmacao);
+historiaFinal += afirmacoes + “ “;
+atual++;
+mostraPergunta();
+}
+function aleatorio(lista) {
+const posicao = Math.floor(Math.random()* lista.length);
+return lista[posicao];
 }
 function mostraResultado(){
     caixaPerguntas.textContent = "Olha só o que podemos afirmar sobre você...";
