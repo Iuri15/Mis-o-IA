@@ -89,7 +89,6 @@ return lista[posicao];
 let atual = 0; 
 let perguntaAtual;
 let historiaFinal = "";
-
 function mostraPergunta(){
     if(atual >= perguntas.length){
         mostraResultado();
@@ -107,7 +106,6 @@ function mostraAlternativas(){
         botaoAlternativas.addEventListener("click", () => respostaSelecionada(alternativa));
         caixaAlternativas.appendChild(botaoAlternativas);
     }
-
 }
 function respostaSelecionada(opcaoSelecionada) {
     const afirmacoes = aleatorio(opcaoSelecionada.afirmacao);
@@ -124,7 +122,4 @@ function mostraResultado(){
     textoResultado.textContent = historiaFinal;
     caixaAlternativas.textContent = "";
 }
-
-
-
 mostraPergunta();
